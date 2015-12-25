@@ -1,4 +1,4 @@
-;;; go-fib.el --- fibonacci in Go lang
+;;; fib.el --- fibonacci C and Emacs Lisp implementation
 
 ;; Copyright (C) 2015 by Syohei YOSHIDA
 
@@ -47,6 +47,6 @@
   (benchmark count `(fib-elisp ,n))
   (benchmark count `(fib-elisp-loop ,n)))
 
-(provide 'go-fib)
+(provide 'fib)
 
-;;; go-fib.el ends here
+;;; fib.el ends here
