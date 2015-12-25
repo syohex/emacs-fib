@@ -6,7 +6,7 @@ LD      = gcc
 CPPFLAGS = -I$(EMACS_ROOT)/src
 CFLAGS = -std=gnu99 -ggdb3 -O2 -Wall -fPIC $(CPPFLAGS)
 
-.PHONY : clean
+.PHONY : clean test
 
 all: fib-core.so
 
@@ -18,3 +18,6 @@ fib-core.o: fib-core.c
 
 clean:
 	-rm -f fib-core.o fib-core.so
+
+test:
+	$(EMACS) -Q -batch -L . -l test/test.el -f ert-run-tests-batch-and-exit
